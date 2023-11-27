@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple PHP Greeting</title>
+</head>
+<body>
+
+    <h2>Simple PHP Greeting</h2>
+
+    <form method="post" action="">
+        <label for="name">Enter your name:</label>
+        <input type="text" name="name" required>
+        <br>
+        <input type="submit" name="greet" value="Greet">
+    </form>
+
+    <?php
+    // Check if the form is submitted
+    if (isset($_POST['greet'])) {
+        // Get user input
+        $name = isset($_POST['name']) ? $_POST['name'] : '';
+
+        // Display the personalized greeting
+        echo "<p>Hello, $name! Welcome to the simple PHP greeting application.</p>";
+    }
+    ?>
+
+</body>
+</html>
